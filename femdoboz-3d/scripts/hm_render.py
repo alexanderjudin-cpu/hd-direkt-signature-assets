@@ -282,15 +282,15 @@ def lights(mode):
 
 
 C = (ctr.x, ctr.y, ctr.z - 0.005)
-TOP = (ctr.x + 0.02, ctr.y + 0.01, mx.z)
+TOP = (ctr.x - 0.03, ctr.y - 0.012, mx.z - 0.012)
 SHOT_DEFS = {
     # name: (az, el, dist, lens, target, w, h, fstop, light mode)
     'hero':     (-38, 20, 1.05, 70, C, 1920, 1080, 8, 'full'),
     'dark':     (-38, 20, 1.05, 70, C, 1920, 1080, 8, 'dark'),
     'orbit':    (38, 20, 1.05, 70, C, 1920, 1080, 8, 'full'),
     'front':    (0, 7, 1.0, 60, (ctr.x, ctr.y, ctr.z - 0.012), 1920, 1080, 9, 'full'),
-    'top':      (-18, 58, 0.36, 85, TOP, 1920, 1080, 4.0, 'full'),
-    'vertical': (-30, 28, 1.25, 60, C, 1080, 1920, 8, 'full'),
+    'top':      (-18, 50, 0.6, 85, TOP, 1920, 1080, 5.6, 'full'),
+    'vertical': (-30, 30, 1.55, 60, C, 1080, 1920, 9, 'full'),
     'square':   (-34, 24, 1.05, 70, C, 1440, 1440, 8, 'full'),
 }
 # material close-up per variant
