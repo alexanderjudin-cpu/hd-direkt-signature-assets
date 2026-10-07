@@ -82,15 +82,16 @@ def leather_material():
         if n.type != 'OUTPUT_MATERIAL':
             N.remove(n)
     out = next(n for n in N if n.type == 'OUTPUT_MATERIAL')
-    tc = N.new('ShaderNodeTexCoord')
+    tc = N.new('ShaderNodeNewGeometry')  # world-space position in metres (the GLB meshes are authored in mm)
     # big, soft hide variation
     nz = N.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 18; nz.inputs['Detail'].default_value = 4
+    L.new(tc.outputs['Position'], nz.inputs['Vector'])
     # pebble grain: voronoi cells ~0.7 mm, distorted by noise for organic shape
     warp = N.new('ShaderNodeTexNoise'); warp.inputs['Scale'].default_value = 300; warp.inputs['Detail'].default_value = 2
     mix = N.new('ShaderNodeVectorMath'); mix.operation = 'MULTIPLY_ADD'
     mix.inputs[1].default_value = (0.0006, 0.0006, 0.0006)
-    L.new(warp.outputs['Color'], mix.inputs[0]); L.new(tc.outputs['Object'], mix.inputs[2])
-    L.new(tc.outputs['Object'], warp.inputs['Vector'])
+    L.new(warp.outputs['Color'], mix.inputs[0]); L.new(tc.outputs['Position'], mix.inputs[2])
+    L.new(tc.outputs['Position'], warp.inputs['Vector'])
     vor = N.new('ShaderNodeTexVoronoi'); vor.feature = 'DISTANCE_TO_EDGE'; vor.inputs['Scale'].default_value = 1500
     L.new(mix.outputs[0], vor.inputs['Vector'])
     vor2 = N.new('ShaderNodeTexVoronoi'); vor2.feature = 'DISTANCE_TO_EDGE'; vor2.inputs['Scale'].default_value = 520
@@ -294,7 +295,7 @@ SHOT_DEFS = {
     'square':   (-34, 24, 1.05, 70, C, 1440, 1440, 8, 'full'),
 }
 # material close-up per variant
-SHOT_DEFS['lineup'] = (-6, 17, 2.3, 70, (ctr.x, ctr.y + 0.02, ctr.z - 0.01), 1920, 1080, 11, 'full')
+SHOT_DEFS['lineup'] = (-4, 18, 2.8, 70, (0.0, 0.04, 0.045), 1920, 1080, 11, 'full')
 # corner close-up: front-left edge, shows the shell material, seams/stitching, caps and a connector
 SHOT_DEFS['macro'] = (-52, 24, 0.40, 100, (mn.x + 0.045, mn.y + 0.035, ctr.z + 0.005), 1920, 1080, 4.5, 'full')
 
