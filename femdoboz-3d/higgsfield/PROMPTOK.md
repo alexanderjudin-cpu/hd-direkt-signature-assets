@@ -4,6 +4,27 @@ Másold be a promptot, töltsd fel a megadott képe(ke)t, és állítsd be a mod
 Ajánlott: **Kling 3.0**, mód: `pro`, hang: `off` (a zenét a vágásnál teszed alá).
 Ha 1080p kell: **Seedance 2.5**, felbontás: `1080p`.
 
+## Csak fény – a tárgy nem változhat (ajánlott)
+
+Mindhárom verzióhoz ugyanez a prompt; csak a start/end képet cseréld. 3 mp, kamera fix, **Enhance prompt: KI**,
+ha van CFG/prompt-erősség csúszka, 0,7–0,8.
+
+- Erősítőfej: tolex + bordás alulemez: Start `renders/amphead/amphead_dark.jpg` → End `renders/amphead/amphead_hero.jpg`
+- Fekete bőr, varrott: Start `renders/leather/leather_dark.jpg` → End `renders/leather/leather_hero.jpg`
+- Csiszolt acél (Poliigon): Start `renders/steel/steel_dark.jpg` → End `renders/steel/steel_hero.jpg`
+
+Prompt:
+
+```
+Static product shot. The object in the reference frames is a rigid, locked asset and must stay 100% identical in every frame: same shape, proportions, position, scale, materials, textures, colours, knobs and knob positions, labels and text, display content, LEDs, connectors, edges and corners. Nothing on the object moves, rotates, bends, morphs, re-renders, appears or disappears. The camera is completely locked: no movement, no zoom, no push-in, no shake. The ONLY thing that changes is the studio lighting: the shot starts almost dark with only thin rim lights tracing the edges, then the soft-box lights fade up smoothly and evenly, a soft highlight glides slowly across the top surface, and the reflection on the glossy black floor brightens. The green LED rings and the blue display stay constantly lit at the same brightness. Dark seamless studio background stays unchanged. Photoreal premium product commercial lighting.
+```
+
+Negatív prompt:
+
+```
+morphing, deformation, warping, melting, distortion, changing text, unreadable labels, new or missing parts, extra knobs, rotating knobs, moving parts, texture change, material change, colour shift on the object, camera movement, zoom, parallax, shake, flicker, extra objects, hands, people, text overlay
+```
+
 ## Erősítőfej: tolex + bordás alulemez (`amphead`)
 
 ### A_reveal · 3 mp · 16:9

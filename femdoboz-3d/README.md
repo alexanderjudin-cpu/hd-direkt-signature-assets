@@ -30,7 +30,10 @@ Mindegyiken a dizájn alapbeállításai vannak: zöld LED-gyűrűk, kék kijelz
 | `<verzió>_vertical.jpg` | 1080×1920 | Álló 9:16 – Reels/TikTok/Shorts |
 | `renders/lineup.jpg` | 1920×1080 | Mindhárom verzió egymás mellett – záróképnek |
 
-Az összes kép egyben: **`higgsfield-csomag.zip`**.
+Letöltés: **`higgsfield-csomag.zip`** (mindhárom verzió + zárókép + promptok), illetve verziónként
+`higgsfield-csomag-amphead.zip`, `higgsfield-csomag-leather.zip`, `higgsfield-csomag-steel.zip`.
+
+Mindhárom verzió képei a Higgsfield-fiókba is be vannak importálva (Media → Images, `amphead_…`, `leather_…`, `steel_…`).
 
 ## Higgsfield lépésről lépésre
 
@@ -39,6 +42,9 @@ Az összes kép egyben: **`higgsfield-csomag.zip`**.
 3. A `higgsfield/PROMPTOK.md`-ből válassz egy jelenetet: töltsd fel a megadott **Start frame** (és ha van, **End frame**) képet,
    másold be a promptot, állítsd be az időtartamot (3 vagy 5 mp) és a képarányt.
 4. Generálj 2–4 változatot, a legjobbat tartsd meg.
+
+**Ha a tárgy egyáltalán nem változhat** (csak a fények), a `PROMPTOK.md` elején lévő „Csak fény” promptot használd
+`_dark` → `_hero` start/end képpárral, 3 mp, fix kamerával, kikapcsolt *Enhance prompt*-tal.
 
 Jelenetek (mindhárom verzióhoz megvan a kész prompt):
 
@@ -60,6 +66,10 @@ Jelenetek (mindhárom verzióhoz megvan a kész prompt):
 | 6–9 mp | B_orbit – acél (első 3 mp) |
 | 9–11 mp | D_knob – bármelyik |
 | 11–15 mp | F_lineup + felirat: **HYBRID MATRIX** |
+
+## Már legenerált videók
+
+Az erősítőfej verzió 5 klipje (Kling 3.0 pro): `higgsfield/GENERALT-VIDEOK.md`.
 
 ## 3D modellek
 

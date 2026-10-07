@@ -76,10 +76,33 @@
     }
   ],
   "edit_15s": [
-    { "t": "0-3 s", "clip": "A_reveal / amphead" },
-    { "t": "3-6 s", "clip": "C_macro / leather" },
-    { "t": "6-9 s", "clip": "B_orbit / steel (first 3 s)" },
-    { "t": "9-11 s", "clip": "D_knob / any variant" },
-    { "t": "11-15 s", "clip": "F_lineup + title: HYBRID MATRIX" }
-  ]
+    {
+      "t": "0-3 s",
+      "clip": "A_reveal / amphead"
+    },
+    {
+      "t": "3-6 s",
+      "clip": "C_macro / leather"
+    },
+    {
+      "t": "6-9 s",
+      "clip": "B_orbit / steel (first 3 s)"
+    },
+    {
+      "t": "9-11 s",
+      "clip": "D_knob / any variant"
+    },
+    {
+      "t": "11-15 s",
+      "clip": "F_lineup + title: HYBRID MATRIX"
+    }
+  ],
+  "light_only": {
+    "note_hu": "Szigorú, csak-fény változat: a tárgy semmiben nem változhat, a kamera is fix. Start: {variant}_dark, End: {variant}_hero, 3 mp, Enhance prompt KI.",
+    "start_image": "renders/{variant}/{variant}_dark.jpg",
+    "end_image": "renders/{variant}/{variant}_hero.jpg",
+    "duration_s": 3,
+    "prompt": "Static product shot. The object in the reference frames is a rigid, locked asset and must stay 100% identical in every frame: same shape, proportions, position, scale, materials, textures, colours, knobs and knob positions, labels and text, display content, LEDs, connectors, edges and corners. Nothing on the object moves, rotates, bends, morphs, re-renders, appears or disappears. The camera is completely locked: no movement, no zoom, no push-in, no shake. The ONLY thing that changes is the studio lighting: the shot starts almost dark with only thin rim lights tracing the edges, then the soft-box lights fade up smoothly and evenly, a soft highlight glides slowly across the top surface, and the reflection on the glossy black floor brightens. The green LED rings and the blue display stay constantly lit at the same brightness. Dark seamless studio background stays unchanged. Photoreal premium product commercial lighting.",
+    "negative_prompt": "morphing, deformation, warping, melting, distortion, changing text, unreadable labels, new or missing parts, extra knobs, rotating knobs, moving parts, texture change, material change, colour shift on the object, camera movement, zoom, parallax, shake, flicker, extra objects, hands, people, text overlay"
+  }
 }

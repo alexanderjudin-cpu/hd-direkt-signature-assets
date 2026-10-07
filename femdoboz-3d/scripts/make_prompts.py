@@ -9,6 +9,13 @@ out = ['# Higgsfield promptok – Hybrid Matrix', '',
        'Másold be a promptot, töltsd fel a megadott képe(ke)t, és állítsd be a modellt.',
        'Ajánlott: **Kling 3.0**, mód: `pro`, hang: `off` (a zenét a vágásnál teszed alá).',
        'Ha 1080p kell: **Seedance 2.5**, felbontás: `1080p`.', '']
+lo = cfg['light_only']
+out += ['## Csak fény – a tárgy nem változhat (ajánlott)', '',
+        'Mindhárom verzióhoz ugyanez a prompt; csak a start/end képet cseréld. 3 mp, kamera fix, **Enhance prompt: KI**,',
+        'ha van CFG/prompt-erősség csúszka, 0,7–0,8.', '']
+for v in order:
+    out += [f"- {cfg['variants'][v]['label_hu']}: Start `{lo['start_image'].format(variant=v)}` → End `{lo['end_image'].format(variant=v)}`"]
+out += ['', 'Prompt:', '', '```', lo['prompt'], '```', '', 'Negatív prompt:', '', '```', lo['negative_prompt'], '```', '']
 for v in order:
     var = cfg['variants'][v]
     out += [f"## {var['label_hu']} (`{v}`)", '']
